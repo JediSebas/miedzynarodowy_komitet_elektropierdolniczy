@@ -31,11 +31,20 @@
       $wynik = mysqli_query($connect, $q);
 
       while ($x = mysqli_fetch_assoc($wynik)) {
+        $id = $x['id7'];
         echo "<tr>";
         echo "<td>" . $x['id7'] . "</td>";
         echo "<td>" . $x['towar7'] . "</td>";
         echo "<td>" . $x['ilosc7'] . "</td>";
         echo "<td>" . $x['cena7'] . "</td>";
+
+        echo "<td>";
+        echo "<form method='post' action='edytuj.php'>";
+        echo "<input type='hidden' value='$id' name='id' />";
+        echo "<input type='submit' value='Edytuj' />";
+        echo "</form>";
+        echo "</td>";
+
         echo "</tr>";
       }
 
