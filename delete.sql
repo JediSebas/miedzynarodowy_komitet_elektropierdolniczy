@@ -1,0 +1,1 @@
+DELETE FROM magazyn WHERE id7 = $id7;
